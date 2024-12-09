@@ -40,7 +40,9 @@ class _LandingPageState extends State<LandingPage> {
       ),
       drawer: const LeftDrawer(),
       body: Center(
-        child: request.loggedIn ? _buildLoggedInContent() : _buildLoggedOutContent(),
+        child: request.loggedIn
+            ? _buildLoggedInContent()
+            : _buildLoggedOutContent(),
       ),
     );
   }
@@ -108,9 +110,9 @@ class _LandingPageState extends State<LandingPage> {
           ElevatedButton(
             onPressed: () {
               Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
             },
             child: const Text('Login'),
             style: ElevatedButton.styleFrom(
@@ -122,9 +124,9 @@ class _LandingPageState extends State<LandingPage> {
           ElevatedButton(
             onPressed: () {
               Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => RegisterPage()),
-                );
+                context,
+                MaterialPageRoute(builder: (context) => RegisterPage()),
+              );
             },
             child: const Text('Sign Up'),
             style: ElevatedButton.styleFrom(
